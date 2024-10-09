@@ -1,6 +1,7 @@
 const express = require('express')
 const path = require('path')
 const router = express.Router()
+const rootRoute = require('../utils/path')
 
 router.get('/add-product', (req, res, next) => {
     // res.send(`
@@ -23,7 +24,8 @@ router.get('/add-product', (req, res, next) => {
     //     </form>
     //     </html>
     // `);
-    res.sendFile(path.join(__dirname, '../', 'views', 'add-product.html'))
+    res.sendFile(path.join(rootRoute, 'views', 'add-product.html'))
+    // res.sendFile(path.join(__dirname, '../', 'views', 'add-product.html'))
 });
 
 router.post('/add-product', (req, res) => {
